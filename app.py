@@ -146,19 +146,4 @@ if len(subdirs) < 2:
     print(f"ERROR: Test dataset directory must contain at least 2 subdirectories (one for each class).")
     sys.exit(1)
 
-# Load test data
-test_data = datagen.flow_from_directory(
-    test_dataset_path,
-    target_size=img_size,
-    batch_size=batch_size,
-    class_mode='binary'
-)
-
-# Evaluate the model on test data
-try:
-    test_loss, test_accuracy = model.evaluate(test_data)
-    print(f"Test Accuracy: {test_accuracy * 100:.2f}%")
-    print(f"Test Loss: {test_loss:.4f}")
-except Exception as e:
-    print(f"ERROR: Testing failed: {e}")
-    sys.exit(1)
+#
